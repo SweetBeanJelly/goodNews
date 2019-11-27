@@ -1,0 +1,168 @@
+
+		body {
+			font-family:"맑은 고딕";
+			background-image:url(../images/pattern2.png);
+			height:100%;
+			width:100%;
+			margin:0 auto;
+			padding:0 auto;
+		}
+		header {
+			height:100px;
+			text-align:center;
+		}
+		header img {
+			margin-top:10px;
+		}
+		section {
+			height:100%;
+			width:1080px;
+			margin:0px auto;
+			margin-top:30px;
+			padding-top:3px;
+			background-color:rgba(255,255,255,0.5);
+			text-align:center;
+			margin-bottom:30px;
+		}
+		#navBar
+		{
+			z-index:30;
+			margin:0 auto;
+			width:1080px;
+			height:22px;
+			background-color:rgba(255,255,255,0.5);
+			box-shadow:0px 1px 1px rgba(0,0,0,0.1);
+		}
+		#mainMenu {
+			z-index:30;
+			width:100%;
+			margin:0 auto;
+			font-size:13px;
+		}
+
+		#mainMenu ul {
+			z-index:30;
+			list-style-type:none;
+			margin:0;
+			padding:0;
+		}
+
+		#mainMenu ul li {
+			z-index:30;
+			float:left;
+			margin-left:4px;
+			line-height:20px;
+			vertical-align:middle;
+			text-align:center;
+			position:relative;
+		}
+
+		.topMenulink {
+			border-top:1px solid rgba(255,255,255,0.0);
+			border-bottom:1px solid rgba(255,255,255,0.0);
+			text-decoration:none;
+			color:black;
+			display:block;               
+			width:150px;
+			transition:border 0.5s ease;
+		}
+		.subMenulink {
+			background-color:#d0282d;
+			text-decoration:none;
+			margin:0 auto;
+			color:white;
+			display:block;
+			width:140px;
+		}
+		.topMenuli:hover .topMenulink {   
+			border-top:1px solid #7b7b7b;
+			border-bottom:1px solid #7b7b7b;
+			transition:border 0.5s ease;
+		}
+		.subMenulink {         
+			border-top:1px solid #505050;
+			margin-top:-1px;
+			padding-top:2px;
+			padding-bottom:2px;
+		}
+		.subMenu
+		{        
+			position:absolute;    
+			height:0px; 
+			overflow:hidden;
+			transition:height 0.6s;
+			-webkit-transition: height 0.6s;
+		}
+		.topMenuli:hover .subMenu /* 눌렀을때 나오는 하위메뉴 li 많이 적었을때 값을 올려줌*/
+		{
+			height:150px;
+		}
+		.side
+		{
+			position:absolute;
+			float:right;
+			top:30px;
+			left:20px;
+			margin:0 auto;
+			margin-right:50px;
+			padding:0;
+			font-size:13px;
+		}
+		.side ul
+		{
+			list-style-type:none;
+		}
+		.side ul li
+		{
+			display:inline-block;
+			padding-right:10px;
+		}
+		.side ul li a {
+			color:black;
+			text-decoration:none;
+		}
+		.side ul li a:hover {
+			color:#d0282d;
+		}
+		#footer
+		{
+			margin:0 auto;
+			width:1080px;
+			border-top:1px dotted rgba(200,200,200,1);
+		}
+		#footer .footerMenu
+		{
+			text-align:center;
+		}
+		#footer .footerMenu li
+		{
+			list-style-type:none;
+			display:inline-block;
+			padding-right:40px;
+			margin:0 auto;
+		}
+		#footer .footerMenu a
+		{
+			padding:0 10px 0 10px;
+			border-right:1px solid rgba(255,255,255,0.0);
+			border-left:1px solid rgba(255,255,255,0.0);
+			transition:border 0.5s ease;
+			color:black;
+			text-decoration:none;
+			font-size:12px;
+		}
+		#footer .footerMenu a:hover
+		{
+			padding:0 10px 0 10px;
+			border-right:1px solid #d0282d;
+			border-left:1px solid #d0282d;
+			transition:border 0.5s ease;
+		}
+		#footer .copyright {
+			color:#505050;
+			text-align:center;
+			letter-spacing:1px;
+			font-size:12px;
+		}
+		::selection {background-color:#fff; color:#d0282d; text-shadow:none;}
+		::-moz-selection {background-color:#fff; color:#d0282d; text-shadow:none;}

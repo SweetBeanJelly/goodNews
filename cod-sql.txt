@@ -1,0 +1,369 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.5.1
+-- http://www.phpmyadmin.net
+--
+-- 호스트: localhost
+-- 처리한 시간: 16-06-24 15:29 
+-- 서버 버전: 5.1.45
+-- PHP 버전: 5.2.17p1
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- 데이터베이스: `mgene2011`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `advice`
+--
+
+CREATE TABLE IF NOT EXISTS `advice` (
+  `advice_num` int(10) NOT NULL AUTO_INCREMENT,
+  `managermanager_id` varchar(30) NOT NULL,
+  `Useruser_id` varchar(30) CHARACTER SET ucs2 NOT NULL,
+  `advice_kind` varchar(30) CHARACTER SET ucs2 NOT NULL,
+  `advice_title` varchar(50) NOT NULL,
+  `advice_content` varchar(100) NOT NULL,
+  PRIMARY KEY (`advice_num`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+
+--
+-- 테이블의 덤프 데이터 `advice`
+--
+
+INSERT INTO `advice` (`advice_num`, `managermanager_id`, `Useruser_id`, `advice_kind`, `advice_title`, `advice_content`) VALUES
+(6, 'mgene2011', 'hello6209', '기타문의', '상담하기', '상담하기');
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `content`
+--
+
+CREATE TABLE IF NOT EXISTS `content` (
+  `WriteWrite_num` int(100) NOT NULL,
+  `content_ row` int(10) NOT NULL,
+  `content_image` varchar(30) DEFAULT NULL,
+  `content_type` int(10) DEFAULT NULL,
+  `content_write` varchar(100) NOT NULL,
+  `content_link` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`WriteWrite_num`,`content_ row`),
+  KEY `content_ row` (`content_ row`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8;
+
+--
+-- 테이블의 덤프 데이터 `content`
+--
+
+INSERT INTO `content` (`WriteWrite_num`, `content_ row`, `content_image`, `content_type`, `content_write`, `content_link`) VALUES
+(3, 1, NULL, 1, '댓글 및 글 작성시 욕,성폭행(성희롱)에 관한 글을 삼가해주세요', NULL),
+(4, 2, NULL, 1, '행복한 소식만을 전달해드립니다. 저희 글은 스크랩, 직접작성등이 가능합니다.', NULL),
+(5, 3, NULL, 1, '저희 페이지는 기분이 좋아지는 글이므로 홈페이지의 제목과 다르게 비방한 글을 삼가해주세요', NULL),
+(6, 4, NULL, 1, '글을 작성하 실때 퍼온 글이면 항상 링크 및 스크랩한 사이트를 달아주세요!!', NULL),
+(7, 5, './images/Blog/B1.png', 1, '외진 북부 카리카리 해변에서 발견된 좌초된 고래 ５８마리 중 ４５마리가 ８월 ２０일 금요일에 발견되었을 당시 이미 사망했습니다. 뉴질랜드 보호국 직원들과 극북고래구조 및 요나프로젝', 'http://blog.daum.net/bommira/15865977'),
+(8, 6, './images/Blog/B2.png', 1, '여러분은 ''겨울'' 하면 무엇이 떠오르시나요? 첫 눈? 스키장? 연말이 되면 유독 많이 찾게 되는 키워드가 바로 봉사활동 이기도 합니다. 다양한 이웃 돕기 행사가 연말을 맞이하여 많', 'https://blog.samsungcard.com/1110'),
+(9, 7, './images/Blog/B3.jpg', 1, '힘들다 힘들다 해도 또다시 일할 맛 나는 순간은? 직장 생활, 참 녹록지 않죠? 습관처럼 출퇴근하고 ‘영혼 없이’ 일하고 있는 나를 발견하기도 하는데요. 때때로 ‘그래, 이래서 내', 'http://blog.samsung.co.kr/5098'),
+(10, 8, './images/Blog/B4.png', 1, '아침 출근길, 급한 마음에 부랴부랴 집을 나섭니다. 눈썹이 휘날리도록 뛰어 겨우 사무실 입구에 도착했어요. 13초만 지나면 지각! 마침 앞서 가던 김 대리님이 눈에 보이네요. 한달', 'http://yoon-talk.tistory.com/562'),
+(11, 9, './images/Blog/B5.jpg', 1, '마음까지 후끈해지는 매너운전의 비결 바쁜 도로 위에서도 작은 배려로 마음을 녹여버리는 순간들이 있습니다. 운전자들에게 물어보았습니다. 운전을 하며 마음이 훈훈해졌던 순간은 언제인가', 'http://blog.hyundai.co.kr/TALK/Story/Happy-Driving'),
+(12, 10, NULL, 1, '임신한 직원을 위해 과장님이  태교음악을 틀어 주시네요  감동했어요  과장님 알라뷰', 'http://around.so/view?v=XwYvNR&utm_campaign=skt&ut'),
+(13, 11, NULL, 1, '버스에서 카드잔액이 부족해서  급하게 내리려던 분이 계시길래  대신 요금 내드렸어요...', 'http://around.so/view?v=rmYwbw&utm_campaign=skt&ut'),
+(14, 12, './images/SNS/S1.png', 1, '지난주 수요일, 여느 때와 다름 없이 북적이던 미국 뉴욕의 지하철.  혼잡한 객차 내 두 노숙인 사이에 시비가 붙고, 급기야 한 노숙인이 다른 이의 위에 올라타 마구 폭행을 휘두르', 'https://www.pikicast.com/#!/menu=landing&content_i'),
+(15, 13, NULL, 1, '손수레에 긁힌 고급승용차 할머니와 일곱살 손자는 손수레를 밀며 가고 있었습니다 조금 걸어가다 골목에 세워져 있던 고급승용차의 옆면에 흠집을 내버렸습니다 그러자 놀란 할머니는 망연자', 'https://www.facebook.com/permalink.php?story_fbid='),
+(16, 14, './images/SNS/S5.jpg', 1, '경기 시작 후 4분 밖에 안됐는데 스코어는 9 대 0... 크게 지고 있었다. 밀튼고등학교 크래머 코치는 작전타임을 요청하고 벤치로 들어오는 선수들에게 소리쳤다. "지금 뭣들하는거', 'https://www.facebook.com/permalink.php?story_fbid='),
+(17, 15, './images/NEWS/N1.png', 1, '선천적인 장애를 갖고 태어났지만 남다른 이웃사랑으로 ''작은 영웅''이라 불리는 60대 주부가 있습니다.  선천성 왜소증 장애를 안고 태어난 키 101cm의 이금자 씨.  30년 넘게', 'http://www.ytn.co.kr/_ln/0103_201604290600026681'),
+(18, 16, './images/NEWS/N2.png', 1, '6.25 전쟁에 참전했던 영국군 전우가 65년 만에 극적으로 서울에서 재회했습니다.  그 주인공들 만나보시죠.  서울의 한 호텔에서 6·25 참전용사에 대한 감사 만찬이 열렸습니다', 'http://www.ytn.co.kr/_ln/0103_201604290600155509'),
+(19, 17, NULL, 1, '한국에서는 ‘크리스마스’ 하면 커플들의 날로 생각합니다. 하지만 스웨덴에서는 가족을 만나는 큰 명절과도 같은 날입니다. 이렇게 큰 명절이다 보니, 크리스마스를 즐기는 방법에도 여러', 'http://weeklytrade.co.kr/news/view.html?section=13'),
+(20, 18, NULL, 1, '1년 전, 2013년을 마무리하면서 저는 한 해 동안 좋았던 뉴스를 모아 정리한 적 있었습니다. 저는 그런 기록을 남기는 일이 좋은 일이라고 생각했고 사람들도 그런 뉴스를 읽으며 ', 'http://newspeppermint.com/2014/12/16/good-news-bil'),
+(21, 19, './images/NEWS/N5.png', 1, '롤러코스터에 탄 아들의 안전띠가 풀린 순간, 아빠의 초능력 같은 순발력이 카메라에 포착됐습니다.  최근 6살 아들 케이슨과 함께 미국 텍사스주 원더랜드 놀이공원을 찾은 델버트 래섬', 'http://www.ytn.co.kr/_ln/0104_201605011830066717_0'),
+(22, 20, './images/Blog/B6.jpg', 1, '뉴욕에 소재한 글로벌 투자 뉴스 사이트 브라이트와이어닷컴이 지난 주 아이폰 6의 NFC 지원 가능성을 시사했다. 이 미디어는 "이 사안과 밀접한 소식통"을 인용해 이같이 보도했다.', 'http://www.ciokorea.com/t/557/%EC%8B%A0%EA%B8%B0%E'),
+(23, 21, './images/Blog/B7.jpg', 1, '병원체의 뇌 침투 막는 혈뇌장벽… 산소·철 함유한 단백질 등은 통과 철 포함한 단백질이 뇌에 들어갈때 함께 통과할 수 있는 항체 만들어 초음파로 혈뇌장벽 느슨하게 해… 뇌 안에 항', 'http://biz.chosun.com/site/data/html_dir/2014/11/0'),
+(24, 22, NULL, 1, '40년 넘게 하버드 경영대학원에 몸담은 최고의 교수이자 미국 경영학계의 살아 있는 전설, 하워드 스티븐슨. 어느 날 하워드는 갑작스러운 심장마비로 쓰러집니다. 기적적으로 깨어난 하', 'http://blog.sk.com/1206'),
+(25, 23, NULL, 1, '일시적인 오류로 인해 시스템개선에 대한 점 죄송합니다. 빠른 시일 내의 복구를 하겠습니다.', NULL),
+(26, 24, NULL, 1, '일시적 장애로 인한 복구 작업!', NULL),
+(27, 25, NULL, 1, '타 사이트 광고 시 경고 2번에 퇴출 하도록 하겠습니다.', NULL),
+(28, 26, NULL, 1, '홈페이지 정식 오픈입니다. 즐겁고 재밌는 하루 되시고 많이 이용부탁드립니다.', NULL),
+(29, 27, '', 1, '비방글 금지입니다. 어길 시 경고 누적이 되고 누적시 자동 삭제 하도록 하겠습니다.', NULL),
+(30, 28, NULL, 1, '홈페이지를 재밌게 구경하시다가 뻑 가시면 책임 못집니다~', NULL),
+(31, 29, NULL, 1, '다들 살아가면서 힘들거나 지칠 때마다 이런 글귀를 보면서 힘을 내시는 분들이 계시기에 좋은 말 몇 가지 끄적여 보려고 합니다      <짧고 좋은 명언>  여러분들이 생각하시는 짧', 'http://blog.naver.com/PostView.nhn?blogId=ghdghdvl'),
+(32, 30, './images/Blog/B10.jpg', 1, '월요일 오후에 헌혈을 오랜 만에 했다. 원래는 대구 중앙로에 위치한 헌혈의 집에 가서 할려고 했었는데, 때 마침 학교에 식당 건물 바로 앞에 헌혈버스가 있어서 바로 했다. 두 달 ', 'http://mytourstory.tistory.com/135'),
+(33, 31, NULL, 1, '지금도 이렇게추운데 이번주 주말에는 더더더더더 춥다고하네요 겨울은 추워야 제맛이긴하지만 지나치게 추운거같기도하네요..  추울때 든든하게 맛있는거 많이먹고 따뜻하게 입고다녀서 감기조', 'http://blog.naver.com/woawoavh/220605100630'),
+(34, 32, './images/Blog/B13.jpg', 1, '3월19일 오후에 컬럼비아 직원들이 학생들과 배구시합에서 승리했습니다. 올해 세번째 학생 대 교사간 스포츠 시합으로 학생들은 교사들의 연승을 막아보려 했습니다. 선생님들과 학생개발', 'http://news.cic-totalcare.com/blogs/%ED%95%9C%EA%B'),
+(35, 33, './images/Blog/B14.jpg', 1, '엔씨소프트 북미/유럽 법인인 엔씨웨스트(NCW)의 새로운 비전을 소개했던 윤송이 CEO 인터뷰에 이어, 이번에는 엔씨웨스트의 모바일 게임 개발을 총괄하고 있는 제시 테일러(Jess', 'http://blog.ncsoft.com/?p=6889'),
+(36, 34, NULL, 1, '자, 좋습니다. 편안하게 몸과 마음을 푸시도록 도와드리겠습니다. 자, 편안하게 호흡을 하면서 약간 눈을 치켜떠서 위쪽을 바라보세요. 되도록 눈을 깜빡이지 마시고요. 그렇게 계속 보', 'http://m.blog.naver.com/jeon026/220089972779'),
+(37, 35, './images/NEWS/N6.jpg', 0, '한인이 개발한 친환경 세탁기가 지구촌 세탁업계에서 주목받고 있다.  앨라베마 주에서 18년 세탁업계에 종사한 한인 Jay Lee(52)씨가 6년 연구개발 끝에 양산체제에 돌입한 세', 'http://www.koreadaily.com/news/read.asp?art_id=379'),
+(38, 36, NULL, 1, '꿀벌은 꿀을 찾아 동료들에게 이를 알립니다. 파리는 파리채를 피합니다. 바퀴벌레는 자신들이 있고 싶은 장소에서 자신들이 하고 싶은 대로 행동하는 듯 보입니다. 하지만 곤충이 단순한', 'http://newspeppermint.com/2016/06/21/stofyfunding-'),
+(39, 37, NULL, 1, '올랜도의 게이클럽, 펄스에서 대량학살 사건이 일어났을 때, 성소수자(LGBT) 공동체에 속한 수많은 이들이 이 사건을 개인적으로 받아들여 깊이 분노했습니다. 펄스는 “그 동네의 게', 'http://newspeppermint.com/2016/06/14/pulse-communi'),
+(40, 38, './images/NEWS/N9.png', 1, '미국 보스턴 뉴턴사우스 고등학교에 다니는 김예나 양은 지난 2014년 교내 스피치에서 일본군 위안부 문제를 주제로 발표한 이후, 미국인들이 위안부 문제에 대해 거의 알지 못한다는 ', 'http://www.ytn.co.kr/_ln/0104_201606231601328180'),
+(41, 39, './images/NEWS/N10.png', 1, '수원의 한 임대아파트에서 붙여진 벽보 한 장이 잔잔한 감동을 전해주고 있습니다.  수원에 사는 신찬수 씨는 자신의 아파트 경비실에 에어컨을 설치하자는 벽보를 붙였습니다.  많은 업', 'http://www.ytn.co.kr/_ln/0103_201606220601411329');
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `happy_postbox`
+--
+
+CREATE TABLE IF NOT EXISTS `happy_postbox` (
+  `USERuser_id` varchar(30) NOT NULL,
+  `WriteWrite_num` int(100) NOT NULL,
+  `postbox_num` int(10) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`postbox_num`),
+  KEY `WriteWrite_num` (`WriteWrite_num`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- 테이블의 덤프 데이터 `happy_postbox`
+--
+
+INSERT INTO `happy_postbox` (`USERuser_id`, `WriteWrite_num`, `postbox_num`) VALUES
+('hello6209', 22, 1),
+('mdot2011', 23, 2),
+('YangGang', 24, 3);
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `manager`
+--
+
+CREATE TABLE IF NOT EXISTS `manager` (
+  `manager_id` varchar(30) NOT NULL,
+  PRIMARY KEY (`manager_id`),
+  UNIQUE KEY `manager_id` (`manager_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 테이블의 덤프 데이터 `manager`
+--
+
+INSERT INTO `manager` (`manager_id`) VALUES
+('mgene2011'),
+('siwon12');
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `manager_data`
+--
+
+CREATE TABLE IF NOT EXISTS `manager_data` (
+  `managermanager_id` varchar(30) NOT NULL,
+  `manager_datetime` date DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 테이블의 덤프 데이터 `manager_data`
+--
+
+INSERT INTO `manager_data` (`managermanager_id`, `manager_datetime`) VALUES
+('mgene2011', '2016-06-21'),
+('siwon12', '2016-06-20');
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `notice`
+--
+
+CREATE TABLE IF NOT EXISTS `notice` (
+  `managermanager_id` varchar(30) NOT NULL,
+  `WriteWrite_num` int(100) NOT NULL,
+  `notice_num` int(10) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`notice_num`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- 테이블의 덤프 데이터 `notice`
+--
+
+INSERT INTO `notice` (`managermanager_id`, `WriteWrite_num`, `notice_num`) VALUES
+('mgene2011', 3, 1),
+('mgene2011', 4, 2),
+('mgene2011', 5, 3),
+('mgene2011', 6, 4),
+('mgene2011', 25, 5),
+('mgene2011', 26, 6),
+('mgene2011', 27, 7),
+('mgene2011', 28, 8),
+('mgene2011', 29, 9),
+('mgene2011', 30, 10);
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `qna`
+--
+
+CREATE TABLE IF NOT EXISTS `qna` (
+  `qna_num` int(10) NOT NULL AUTO_INCREMENT,
+  `QnA_title` varchar(50) NOT NULL,
+  `QnA_content` varchar(100) NOT NULL,
+  PRIMARY KEY (`qna_num`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
+
+--
+-- 테이블의 덤프 데이터 `qna`
+--
+
+INSERT INTO `qna` (`qna_num`, `QnA_title`, `QnA_content`) VALUES
+(1, '회원탈퇴', '회원탈퇴는 신중하게 생각해주시고 탈퇴하세요. 모든 데이터가 사라집니다.'),
+(2, '회원 탈퇴후 재가입', '회원 탈퇴후 재가입은 언제든지 가능합니다.'),
+(3, '스크랩 방법', '스크랩 하고 싶은 글에서 버튼을 눌러서 스크랩을 하시면 됩니다.'),
+(4, '제가 글은 쓰고싶은데 어떻게 작성하나요?', '글은 행복우체통에서 작성하시면 됩니다.'),
+(5, '꼭 회원가입을 해야하나요?', '저희 사이트는 회원가입을 해야만 스크랩, 글 작성등을 하실수 있습니다.'),
+(6, '작성 한 글은 수정이 가능한가요?', '작성 하신 모든 글들은 수정이 가능합니다.'),
+(7, '이 홈페이지는 어떤 홈페이지인가요?', '저희 홈페이지는 흉흉한 세상 속에서 즐거움이 가득하시라는 마음으로 만든 훈훈한 사이트입니다.'),
+(8, '아이디를 잃어 버렸어요!', '아이디를 잃어 버렸을 시 아이디 찾기로 하여 아이디를 찾으실 수 있습니다.'),
+(9, '비밀번호를 잃어 버렸어요!', '비밀번호를 잃어 버렸을 시 비밀번호 찾기로 하여 비밀번호를 찾으시면 됩니다.'),
+(10, '너무 이야기들이 재밌는데 어떻게 하죠?', '재미있으시면 마음 껏 웃으시고 기분 좋게 하루 보내셨으면 좋겠습니다.');
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `scrap`
+--
+
+CREATE TABLE IF NOT EXISTS `scrap` (
+  `USERuser_id` varchar(30) NOT NULL,
+  `WriteWrite_num` int(100) NOT NULL,
+  `scarp_num` int(10) NOT NULL AUTO_INCREMENT,
+  `scrap_date` date NOT NULL,
+  `scrap_kind` varchar(30) NOT NULL,
+  PRIMARY KEY (`USERuser_id`,`scarp_num`),
+  KEY `WriteWrite_num` (`WriteWrite_num`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+--
+-- 테이블의 덤프 데이터 `scrap`
+--
+
+INSERT INTO `scrap` (`USERuser_id`, `WriteWrite_num`, `scarp_num`, `scrap_date`, `scrap_kind`) VALUES
+('a', 5, 1, '2016-06-24', ''),
+('a', 6, 2, '2016-06-24', ''),
+('a', 7, 3, '2016-06-22', ''),
+('b', 8, 1, '2016-06-17', ''),
+('b', 9, 2, '2016-06-16', ''),
+('a', 18, 6, '2016-06-22', 'NEWS'),
+('a', 16, 5, '2016-06-22', 'SNS'),
+('s', 37, 1, '2016-06-21', 'NEWS'),
+('', 18, 1, '2016-06-22', 'NEWS'),
+('r', 37, 1, '2016-06-21', 'NEWS');
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `users`
+--
+
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` varchar(30) NOT NULL,
+  `USERuser_id` varchar(30) DEFAULT NULL,
+  `managermanager_id` varchar(30) DEFAULT NULL,
+  `pw` varchar(30) DEFAULT NULL,
+  `name` varchar(30) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `phone` varchar(40) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 테이블의 덤프 데이터 `users`
+--
+
+INSERT INTO `users` (`id`, `USERuser_id`, `managermanager_id`, `pw`, `name`, `email`, `phone`) VALUES
+('hello6209', 'hello6209', NULL, 'hello', '이우영', 'hello6209@naver.com', '010-6209-6864'),
+('mot2011', 'mot2011', NULL, 'mdot', '석지민', 'modot@naver.com', '010-4496-1350'),
+('YangGang', 'YangGang', NULL, 'yang', '진연경', 'yang@daum.net', '010-8812-7561'),
+('mgene2011', NULL, 'mgene2011', 'Jimin2012', '지민(관리자)', 'mgene@nate.com', '010-4496-1350'),
+('siwon12', NULL, 'siwon12', 'siwon', '시원(관리자)', 'tubo45@naver.com', '010-6718-0614'),
+('s', NULL, NULL, 'ss', 'ss', 'sadasdasds@naver.com', '0101231234'),
+('a', NULL, NULL, '1', 'aa', 'df@daum.net', '01111111111'),
+('acc', NULL, NULL, '1', 'a', 'aa@naver.com', '01011112222'),
+('r', NULL, NULL, 'rr', 'dfdfdf', 'sdasdas@daum.net', '0102322323');
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `users_data`
+--
+
+CREATE TABLE IF NOT EXISTS `users_data` (
+  `user_id` varchar(30) NOT NULL,
+  `user_scrapcnt` int(10) NOT NULL,
+  `user_affichagecnt` int(10) NOT NULL,
+  `user_scrapdate` date NOT NULL,
+  `user_affichagedate` date NOT NULL,
+  `user_date` date NOT NULL,
+  UNIQUE KEY `user_id` (`user_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 테이블의 덤프 데이터 `users_data`
+--
+
+INSERT INTO `users_data` (`user_id`, `user_scrapcnt`, `user_affichagecnt`, `user_scrapdate`, `user_affichagedate`, `user_date`) VALUES
+('hello6209', 10, 11, '2016-06-21', '2016-06-21', '2016-06-21'),
+('mot2011', 19, 32, '2016-06-02', '2016-06-01', '2016-06-07'),
+('YangGang', 3, 1, '2016-06-16', '2016-06-18', '2016-06-20');
+
+-- --------------------------------------------------------
+
+--
+-- 테이블 구조 `write`
+--
+
+CREATE TABLE IF NOT EXISTS `write` (
+  `Write_num` int(100) NOT NULL AUTO_INCREMENT,
+  `Write_title` varchar(50) DEFAULT NULL,
+  `Write_kind` varchar(50) DEFAULT NULL,
+  `Write_date` date DEFAULT NULL,
+  PRIMARY KEY (`Write_num`),
+  KEY `Write_num` (`Write_num`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=42 ;
+
+--
+-- 테이블의 덤프 데이터 `write`
+--
+
+INSERT INTO `write` (`Write_num`, `Write_title`, `Write_kind`, `Write_date`) VALUES
+(3, '네티켓을 지켜주세요', '공지사항', '2016-06-01'),
+(4, '홈페이지 사용 방법', '공지사항', '2016-06-01'),
+(5, '삼가할 글에 대한 내용', '공지사항', '2016-06-02'),
+(6, '글 작성시 주의!!!', '공지사항', '2016-06-03'),
+(7, '뉴질랜드에서 좌초된 9마리 고래가 구조되었습니다', '블로그', '2016-06-08'),
+(8, '참신한 봉사활동으로 ''일''과 ''봉사'' 두마리 토끼를 잡은 삼성카드 채호철 과장!', '블로그', '2016-06-14'),
+(9, '이럴 때 일할 맛 난다!! 직장인이라 행복한 순간은 언제 일까?', '블로그', '2016-06-14'),
+(10, '작은 실천으로 큰 변화를 만들다, ‘라우드(LOUD) 프로젝트’', '블로그', '2016-06-21'),
+(11, '운전할 때 기분 좋아지는 순간 7 ', '블로그', '2016-06-23'),
+(12, '임신한 직원을 위해 과장님이 태교음악을 틀어 주시네요 감동했어요 과장님 알', 'SNS', '2016-06-13'),
+(13, ' 버스에서 카드잔액이 부족해서 급하게 내리려던 분이 계시길래 대신 요금.. ', 'SNS', '2016-06-08'),
+(14, '지하철 난동 제압한 스웨덴 훈남 어벤져스 얼굴 훈훈 마음도 훈훈', 'SNS', '2016-06-14'),
+(15, '손수레에 긁힌 고급승용차', 'SNS', '2016-06-15'),
+(16, '한 손의 농구선수', 'SNS', '2016-06-22'),
+(17, '''101cm'' 작은 영웅을 소개합니다', 'NEWS', '2016-06-16'),
+(18, '흑백사진 속 ''6·25 전우'' 65년 만에 만났다', 'NEWS', '2016-06-22'),
+(19, '“God Jul!(굿율)”', 'NEWS', '2016-06-17'),
+(20, '[빌게이츠 블로그] 2014년의 좋은 뉴스 5가지', 'NEWS', '2016-06-06'),
+(21, '롤러코스터 탄 아들 안전벨트 풀린 순간 ''아빠의 초능력''', 'NEWS', '2016-06-22'),
+(22, ' NFC 아이폰, 기업 보안에 희소식인 이유', '블로그', '2016-06-14'),
+(23, '[뇌에 항체·약 주입하는 방법 개발]', '블로그', '2016-06-22'),
+(24, '[행복명언] 인생의 전환점 제대로 활용하는 법, 하워드의 선물 명언', '블로그', '2016-06-14'),
+(25, '시스템 개선작업으로 인한 일시적 서비스 중단', '공지사항', '2016-06-23'),
+(26, '일시적인 장애로 인한 서비스 복구', '공지사항', '2016-06-23'),
+(27, '타 사이트의 대한 광고글을 적지 마세요!', '공지사항', '2016-06-22'),
+(28, '홈페이지 정식 오픈날짜', '공지사항', '2016-05-31'),
+(29, '비방글 금지!!', '공지사항', '2016-06-20'),
+(30, '재미있게 보시다가 뻑 넘어가지마세요', '공지사항', '2016-06-07'),
+(31, '짧고 좋은 명언 - 인생의 반환점', '블로그', '2016-06-13'),
+(32, '헌혈하고 받은 보틀', '블로그', '2016-06-22'),
+(33, '추운겨울철 든든하게먹고 힘냅시다', '블로그', '2016-06-20'),
+(34, '학생 대 교사 배구시합: 교사들의 스파이크 승리', '블로그', '2016-06-28'),
+(35, '전세계 사람들이 즐기는 게임을 만들고 싶어요', '블로그', '2016-06-20'),
+(36, '최면-예시-지성향상', '블로그', '2016-06-07'),
+(37, '세탁업계 희소식 ‘친환경 세탁기’개발 ', 'NEWS', '2016-06-21'),
+(38, '꿀벌에게도 의식이 있을까요?', 'NEWS', '2016-06-02'),
+(39, '소수자들의 일상을 지켜온 공동체, 펄스는 그 어디에나 있습니다', 'NEWS', '2016-06-15'),
+(40, '[좋은뉴스] 미국서 위안부 문제 알리는 여고생 김예나', 'NEWS', '2016-06-14'),
+(41, '아파트 경비실에 ''에어컨 놔주기'' 운동', 'NEWS', '2016-06-21');

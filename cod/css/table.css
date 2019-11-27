@@ -1,0 +1,76 @@
+﻿.tbl_type,.tbl_type th,.tbl_type td
+{
+border:0;
+}
+.tbl_type
+{
+margin:0 auto;
+width:600px;
+margin-bottom:10px;
+border-bottom:2px solid #dcdcdc;
+font-family:"맑은 고딕";
+font-size:11px;
+text-align:center;
+}
+.tbl_type caption
+{
+display:none;
+}
+.tbl_type th
+{
+padding:5px 0 4px;
+border-top:2px solid #dcdcdc;
+color:gray;
+font-family:'맑은 고딕';
+font-size:12px;
+font-weight:bold;
+}
+.tbl_type td
+{
+padding:6px 0 4px;
+border-top:1px solid #e5e5e5;
+color:#4c4c4c;
+}
+.btn
+{
+font-size:12px;
+padding:5px 8px 5px 8px;
+background-color:white;
+}
+.btn:active
+{
+background-color:#d7d7d7;
+}
+#btnForm {
+padding:10px;
+margin-bottom:5px;
+}
+.imageWrite {
+margin-bottom:5px;
+}
+.imageWrite p {
+margin-right:250px;
+}
+
+.title {
+color:#505050;
+text-decoration:none;
+}
+.title:hover {
+text-decoration: underline;
+color:#d0282d;
+}
+.fitle {
+color:white;
+text-decoration:none;
+}
+
+.fitle:hover {
+text-decoration: underline;
+color:#d0282d;
+}
+
+.fitle:link {
+color:white;
+text-decoration:none;
+}
