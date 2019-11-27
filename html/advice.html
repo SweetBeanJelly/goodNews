@@ -1,0 +1,238 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="COD-G">
+  <meta http-equiv="Imagetoolbar" content="no">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <title>좋 은 날 엔 희 소 식</title>
+
+ </head>
+	<style>
+		.menuTitle {
+			text-align:center;
+			padding-top:5px;
+			padding-bottom:5px;
+			font-size:12px;
+			margin:5px auto;
+			transition:background-color 0.5s ease;
+		}
+		.menuTitle:hover {
+			background-color: rgba(0, 0, 0, 0.3);
+			transition:background-color 0.5s ease;
+		}
+	</style>
+ <body>
+	<header>
+	<!-- 머리 -->
+		<div>
+			<a href="index.jsp"><img src="./images/title.png" alt="좋은날엔희소식"/></a>
+		</div>	
+	</header>
+
+	<nav>
+	<!-- 메인메뉴와 하위메뉴 -->
+	<div id="navBar">
+		<div id="mainMenu">
+			<ul>
+				<li class="topMenuli"><a class="topMenulink" href="notice.jsp">공지사항</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="news.jsp">미소짓는 뉴스</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="sns.jsp">희소식 담벼락</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="blog.jsp">글담은 온돌방</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="post.jsp">행복 우체통</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="#" style="cursor:default;">나를 위한 공간</a>
+					<ul class="subMenu">
+						<li><a href='javascript:membershipCheck()' class="subMenulink">나의 정보 수정</a></li>
+						<li><a class="subMenulink" href="memberScrap.jsp">스크랩 보기</a></li>
+						<li><a class="subMenulink" href="memberLetter.jsp">내가 쓴 편지</a></li>
+					</ul>
+				</li>
+				<li class="topMenuli"><a class="topMenulink" href="#" style="cursor:default;">고민해결</a>
+					<ul class="subMenu">
+						<li><a class="subMenulink" href="qna.jsp">Q n A</a></li>
+						<li><a class="subMenulink" href="advice.jsp">상담 하기</a></li>
+						<li><a class="subMenulink" href="mail.jsp">메일 보내기</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="side"> 
+        <div>
+			<ul>
+				<li><a href="login.jsp">Login</a></li>
+				<li><a href="join.jsp">Join</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+	<section>
+	<!-- 본문 -->
+
+		<div class="ApplyForm Type1">
+
+	<!-- TableType -->
+	<fieldset class="TableType Type2">
+		<legend></legend>
+		<form id="regform" name="regform" method="post">
+		<input type="hidden" name="procMode" value="write">
+		<input type="hidden" name="mobile" value=""/>
+		<input type="hidden" name="tel" value=""/>
+		<input type="hidden" name="zipcode" value=""/>
+		<input type="hidden" name="email" value=""/>
+		<input type="hidden" name="address" value=""/>
+		<table>
+			<caption></caption>
+			<colgroup>
+				<col style="width:150px">
+				<col>
+			</colgroup>
+			<tbody>
+				<tr>
+					<th>문의파트 *</th>
+					<td>
+						<select class="Select Type1" title="문의파트" id="category" name="category" style="min-width:170px">
+							<option value="">선택</option>
+							<option value="0901">제품문의</option>
+							<option value="0902">투자문의</option>
+							<option value="0903">채용문의</option>
+							<option value="0904">기타문의</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>고객명(회사명) *</th>
+					<td>
+						<input type="text" class="Input Type1 RightMargin" style="width:167px" id="customer" name="customer" title="고객명(회사명)">
+					</td>
+				</tr>
+				<tr>
+					<th>연락처(핸드폰) *</th>
+					<td colspan="3">
+						<select class="Select Type1 RightMargin" id="mobile1" name="mobile1" title="연락처(핸드폰) 국번">
+							<option value="">선택</option>
+							<option value="010">010</option>
+							<option value="011">011</option>
+							<option value="016">016</option>
+							<option value="017">017</option>
+							<option value="018">018</option>
+							<option value="019">019</option>
+						</select>
+						<span class="SideMargin">-</span>
+						<input type="text" class="Input Type1 onlynumber" id="mobile2" name="mobile2" title="연락처(핸드폰) 첫번째" style="width:50px" maxlength="4">
+						<span class="SideMargin">-</span>
+						<input type="text" class="Input Type1 onlynumber" id="mobile3" name="mobile3" title="연락처(핸드폰) 두번째" style="width:50px" maxlength="4">
+					</td>
+				</tr>
+				<tr class="Last">
+					<th>연락처(직장/집) *</th>
+					<td colspan="3">
+						<input type="text" class="Input Type1 onlynumber" id="tel1" name="tel1" title="연락처(직장/집) 국번" style="width:50px" maxlength="4">
+						<!-- select class="Select Type1 RightMargin" title="연락처(직장/집) 국번">
+							<option>선택</option>
+						</select-->
+						<span class="SideMargin">-</span>
+						<input type="text" class="Input Type1 onlynumber" id="tel2" name="tel2" title="연락처(직장/집) 첫번째" style="width:50px" maxlength="4">
+						<span class="SideMargin">-</span>
+						<input type="text" class="Input Type1 onlynumber" id="tel3" name="tel3" title="연락처(직장/집) 두번째" style="width:50px" maxlength="4">
+					</td>
+				</tr>
+				<tr>
+					<th>이메일 주소 *</th>
+					<td>
+						<input type="text" class="Input Type1" id="email1" name="email1" title="이메일 주소" style="width:142px">
+						<span class="SideMargin">@</span>
+						<input type="text" class="Input Type1 RightMargin" id="email2" name="email2" title="이메일 도메인" style="width:142px; display:none;">
+						<select class="Select Type1 RightMargin" id="email3" name="email3" title="이메일 도메인 선택" style="min-width:120px" onChange="javascript:setEmail(this.value);">
+							<option value="">선택</option>
+							<option value="chol.com">chol.com</option>
+							<option value="dreamwiz.com">dreamwiz.com</option>
+							<option value="empal.com">empal.com</option>
+							<option value="hanmir.com">hanmir.com</option>
+							<option value="hanafos.com">hanafos.com</option>
+							<option value="hotmail.com">hotmail.com</option>
+							<option value="lycos.co.kr">lycos.co.kr</option>
+							<option value="nate.com">nate.com</option>
+							<option value="naver.com">naver.com</option>
+							<option value="daum.net">daum.net</option>
+							<option value="hanmail.net">hanmail.net</option>
+							<option value="gmail.com">gmail.com</option>
+							<option value="paran.com">paran.com</option>
+							<option value="yahoo.co.kr">yahoo.co.kr</option>
+							<option value="etc">직접입력</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<th>현주소(직장/집) *</th>
+					<td>
+						<p class="Line">
+							<input type="text" id="zipcode1" name="zipcode1" class="Input Type1 onlynumber" style="width:50px" maxlength="3">
+							<span class="SideMargin">-</span>
+							<input type="text" id="zipcode2" name="zipcode2" class="Input Type1 RightMargin onlynumber" style="width:50px" maxlength="3">
+							<a href="#ZipCodePop" id="zipcodeselector" class="Button Type5 PopTrigger">찾아보기</a>
+						</p>
+						<p>
+							<input type="text" id="address1" name="address1"  class="Input Type1 RightMargin2" title="주소" style="width:300px">
+							<label for="address2" class="RightMargin">상세주소</label>
+							<input type="text" class="Input Type1" id="address2" style="width:350px">
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th>제목 *</th>
+					<td>
+						<input type="text" class="Input Type1" title="제목" id="title" name="title" style="width:98%">
+					</td>
+				</tr>
+				<tr>
+					<th class="VMiddle">내용 *</th>
+					<td>
+						<textarea title="내용" class="Textarea Type1" name="content" style="width:96.8%; height:150px"></textarea>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+	</fieldset>
+	<!-- //TableType -->
+
+	<p class="BtnArea Type2">
+		<a href="javascript:clearForm();" class="Button Type4">삭제</a>
+		<a href="javascript:save();" class="Button Type4 Color1">등록</a>
+	</p>
+
+</div>
+	
+
+	<article>
+	<!-- -->
+	</article>
+
+
+	</section>
+
+
+	<footer>
+	<!-- 바닥 -->
+	<div id="footer">
+        <div class="footerMenu">
+            <ul>
+				<li><a href="#">석지민</a></li>
+                <li><a href="#">이우영</a></li>
+                <li><a href="#">진연경</a></li>
+            </ul>
+			<img src="./images/logo.png" width="70px" height="70px;" alt="좋은날엔희소식"/>
+		</div>
+		<p class="copyright" style="cursor:text;"> Copyright © 2016 Color of Delight Group</p>
+    </div>
+
+	</footer>
+  
+ </body>
+</html>

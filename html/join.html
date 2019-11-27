@@ -1,0 +1,206 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="COD-G">
+  <meta http-equiv="Imagetoolbar" content="no">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <title>좋 은 날 엔 희 소 식</title>
+
+	<script language="javascript">
+		function back()
+		{
+			history.back();
+		}
+	</script>
+
+ </head>
+
+	<style>
+	#join
+	{
+		width:800px;
+		margin:0 auto;
+		margin-bottom:50px;
+		font-family:"맑은 고딕";
+		font-size:13px;
+	}
+	table, td
+	{
+		margin:0 auto;
+		margin-bottom:20px;
+		border:1px solid gray;
+		text-align:left;
+	}
+
+	table
+	{
+		border-collapse:collapse;
+		width:500px;
+	}
+
+	td
+	{
+		padding:10px;
+	}
+	.btnTd
+	{
+		text-align:center;
+	}
+	.btn
+	{
+		font-size:12px;
+		padding:5px 13px 5px 13px;
+		margin:5px 25px 5px 33px;
+		background-color:white;
+	}
+	.btn:active
+	{
+		background-color:#d7d7d7;
+	}
+	select option {
+		font-family:"맑은 고딕";
+	}
+	</style>
+
+ <body>
+	<header>
+	<!-- 머리 -->
+		<div>
+			<a href="index.jsp"><img src="./images/title.png" alt="좋은날엔희소식"/></a>
+		</div>	
+	</header>
+
+	<nav>
+	<!-- 메인메뉴와 하위메뉴 -->
+	<div id="navBar">
+		<div id="mainMenu">
+			<ul>
+				<li class="topMenuli"><a class="topMenulink" href="notice.jsp">공지사항</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="news.jsp">미소짓는 뉴스</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="sns.jsp">희소식 담벼락</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="blog.jsp">글담은 온돌방</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="post.jsp">행복 우체통</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="#" style="cursor:default;">나를 위한 공간</a>
+					<ul class="subMenu">
+						<li><a href='javascript:membershipCheck()' class="subMenulink">나의 정보 수정</a></li>
+						<li><a class="subMenulink" href="memberScrap.jsp">스크랩 보기</a></li>
+						<li><a class="subMenulink" href="memberLetter.jsp">내가 쓴 편지</a></li>
+					</ul>
+				</li>
+				<li class="topMenuli"><a class="topMenulink" href="#" style="cursor:default;">고민해결</a>
+					<ul class="subMenu">
+						<li><a class="subMenulink" href="qna.jsp">Q n A</a></li>
+						<li><a class="subMenulink" href="advice.jsp">상담 하기</a></li>
+						<li><a class="subMenulink" href="mail.jsp">메일 보내기</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="side"> 
+        <div>
+			<ul>
+				<li><a href="login.jsp">Login</a></li>
+				<li><a href="#">Join</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+	<section>
+	<!-- 본문 -->
+
+		<div>
+			<form id="join" method="post">
+				<h2>회원가입</h2>
+				<p>정확한 회원정보를 입력하여 주십시오.</p>
+					<table>
+					  <tr>
+						<td>이름</td>
+						<td><input type="text" placeholder="공백없이 입력하세요." /></td>
+					  </tr>
+					  <tr>
+						<td>아이디</td>
+						<td><input type="text" required /></td>
+					  </tr>
+					  <tr>
+						<td>비밀번호</td>
+						<td><input type="password" required /></td>
+					  </tr>
+					  <tr>
+						<td>비밀번호 확인</td>
+						<td><input type="password" /></td>
+					  </tr>
+					  <tr>
+						<td>연락처</td>
+						<td>
+							<select title="연락처">
+								<option value="">선택</option>
+								<option value="010">010</option>
+								<option value="011">011</option>
+								<option value="016">016</option>
+								<option value="018">018</option>
+							</select>
+							<span>-</span>
+							<input title="연락처 첫번째" style="width:50px" maxlength="4">
+							<span>-</span>
+							<input title="연락처 두번째" style="width:50px" maxlength="4">
+						</td>
+					  </tr>
+					  <tr>
+						<td>E-Mail</td>
+						<td>
+							<input type="text" title="이메일 주소">
+							<span>@</span>
+							<select title="이메일 도메인 선택" style="min-width:120px">
+								<option value="">선택</option>
+								<option value="naver.com">naver.com</option>
+								<option value="daum.net">daum.net</option>
+								<option value="nate.com">nate.com</option>								
+								<option value="hanmail.net">hanmail.net</option>
+								<option value="gmail.com">gmail.com</option>
+							</select>
+						</td>
+					  </tr>
+					  <tr>
+						<td colspan="2" class="btnTd">
+						<input class="btn" type="submit" value="확인" />
+						<input class="btn" type="button" value="취소" onclick='back()'/>
+						</td>
+					  </tr>
+					</table>
+			</form>
+		</div>
+	
+
+	<article>
+	<!-- -->
+	</article>
+
+
+	</section>
+
+
+	<footer>
+	<!-- 바닥 -->
+	<div id="footer">
+        <div class="footerMenu">
+            <ul>
+				<li><a href="http://blog.naver.com/mdot2010">석지민</a></li>
+                <li><a href="http://blog.naver.com/hello6209">이우영</a></li>
+                <li><a href="http://blog.daum.net/chutedeau">진연경</a></li>
+            </ul>
+			<img src="./images/logo.png" width="70px" height="70px;" alt="좋은날엔희소식"/>
+		</div>
+		<p class="copyright" style="cursor:text;"> Copyright © 2016 Color of Delight Group</p>
+    </div>
+
+	</footer>
+  
+ </body>
+</html>

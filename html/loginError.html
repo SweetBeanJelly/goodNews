@@ -1,0 +1,160 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="COD-G">
+  <meta http-equiv="Imagetoolbar" content="no">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <title>좋 은 날 엔 희 소 식</title>
+
+	<script language="javascript">
+		function check()
+		{
+			if (login.id.value=="")
+			{
+			alert("아이디를 입력하세요");
+			return false;
+			}
+			if (login.pwd.value=="")
+			{
+			alert("비밀번호를 입력하세요");
+			return false;
+			}
+			login.submit();
+		}
+
+		function back()
+		{
+			history.back();
+		}
+
+	</script>
+
+ </head>
+	<style>
+		#form {
+			font-family:"맑은 고딕";
+			font-size:13px;
+			text-align:center;
+			margin:auto;
+			padding:10px;
+			padding-top:40px;
+			margin-top:90px;
+			margin-bottom:90px;
+			border:1px solid gray;
+			width:400px;
+			height:200px;
+		}
+		#form:hover {
+			border:1px solid black;
+		}
+		.form-group {
+			padding:5px;
+			text-align:center;
+			margin:auto;
+			width:300px;
+		}
+		.btn {
+			font-size:13px;
+			padding:8px 20px 8px 20px;
+			margin:15px 20px 10px 30px;
+			background-color:white;
+		}
+		.btn:active {
+			background-color:#d7d7d7;
+		}
+	</style>
+ <body>
+	<header>
+	<!-- 머리 -->
+		<div>
+			<a href="index.jsp"><img src="./images/title.png" alt="좋은날엔희소식"/></a>
+		</div>	
+	</header>
+
+	<nav>
+	<!-- 메인메뉴와 하위메뉴 -->
+	<div id="navBar">
+		<div id="mainMenu">
+			<ul>
+				<li class="topMenuli"><a class="topMenulink" href="notice.jsp">공지사항</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="news.jsp">미소짓는 뉴스</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="sns.jsp">희소식 담벼락</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="blog.jsp">글담은 온돌방</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="post.jsp">행복 우체통</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="#" style="cursor:default;">나를 위한 공간</a>
+					<ul class="subMenu">
+						<li><a href='javascript:membershipCheck()' class="subMenulink">나의 정보 수정</a></li>
+						<li><a class="subMenulink" href="memberScrap.jsp">스크랩 보기</a></li>
+						<li><a class="subMenulink" href="memberLetter.jsp">내가 쓴 편지</a></li>
+					</ul>
+				</li>
+				<li class="topMenuli"><a class="topMenulink" href="#" style="cursor:default;">고민해결</a>
+					<ul class="subMenu">
+						<li><a class="subMenulink" href="qna.jsp">Q n A</a></li>
+						<li><a class="subMenulink" href="advice.jsp">상담 하기</a></li>
+						<li><a class="subMenulink" href="mail.jsp">메일 보내기</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="side"> 
+        <div>
+			<ul>
+				<li><a href="login.jsp">Login</a></li>
+				<li><a href="join.jsp">Join</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+	<section>
+	<!-- 본문 -->
+		<div id="form">
+			<h2>정보를 다시 확인 해주세요 !</h2>
+		  <form name="login" method="post" action="login.jsp">
+			<div class="form-group">
+			  <label for="id" style="padding-left:43px;">ID : </label>
+			  <input type="text" id="id" placeholder="아이디를 입력하세요">
+			</div>
+			<div class="form-group">
+			  <label for="pwd">Password : </label>
+			  <input type="password" id="pwd" placeholder="비밀번호를 입력하세요">
+			</div>
+			  <input class="btn" type="submit" value="접속" onclick='check()'/>
+			  <input class="btn" type="button" value="취소" onclick='back()'/>
+		  </form>
+		</div>	
+
+	<article>
+	<!-- -->
+	</article>
+
+
+	</section>
+
+
+	<footer>
+	<!-- 바닥 -->
+	<div id="footer">
+        <div class="footerMenu">
+            <ul>
+				<li><a href="http://blog.naver.com/mdot2010">석지민</a></li>
+                <li><a href="http://blog.naver.com/hello6209">이우영</a></li>
+                <li><a href="http://blog.daum.net/chutedeau">진연경</a></li>
+            </ul>
+			<img src="./images/logo.png" width="70px" height="70px;" alt="좋은날엔희소식"/>
+		</div>
+		<p class="copyright" style="cursor:text;"> Copyright © 2016 Color of Delight Group</p>
+    </div>
+
+	</footer>
+  
+ </body>
+</html>

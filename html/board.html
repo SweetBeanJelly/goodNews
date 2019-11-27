@@ -1,0 +1,155 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.*" %>
+
+<!doctype html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Author" content="COD-G">
+  <meta http-equiv="Imagetoolbar" content="no">
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  <title>좋 은 날 엔 희 소 식</title>
+
+	<script language="javascript">
+
+	</script>
+
+	<style>
+		.font {
+			margin:0 auto;
+			width:600px;
+			font-family:"맑은 고딕";
+			margin-bottom:15px;
+			border-bottom:1px solid black;
+		}
+		.font h5 {
+			text-align:right;
+			font-size:11px;
+		}
+		.font_div {
+			margin:0 auto;
+			text-align:center;
+			width:500px;
+			font-size:13px;
+			margin-bottom:50px;
+		}
+		.font_bottom {
+			margin:0 auto;
+			width:300px;
+			font-size:13px;
+			text-align:left;
+			border:1px solid black;
+			margin-bottom:30px;
+			font-family:"맑은 고딕"
+		}
+		.font_bottom a {
+			padding-left:10px;
+		}
+	</style>
+
+ </head>
+
+ <body>
+	<header>
+	<!-- 머리 -->
+		<div>
+			<a href="index.jsp"><img src="./images/title.png" alt="좋은날엔희소식"/></a>
+		</div>	
+	</header>
+
+	<nav>
+	<!-- 메인메뉴와 하위메뉴 -->
+	<div id="navBar">
+		<div id="mainMenu">
+			<ul>
+				<li class="topMenuli"><a class="topMenulink" href="notice.jsp">공지사항</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="news.jsp">미소짓는 뉴스</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="sns.jsp">희소식 담벼락</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="blog.jsp">글담은 온돌방</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="post.jsp">행복 우체통</a></li>
+				<li class="topMenuli"><a class="topMenulink" href="#" style="cursor:default;">나를 위한 공간</a>
+					<ul class="subMenu">
+						<li><a href='javascript:membershipCheck()' class="subMenulink">나의 정보 수정</a></li>
+						<li><a class="subMenulink" href="memberScrap.jsp">스크랩 보기</a></li>
+						<li><a class="subMenulink" href="memberLetter.jsp">내가 쓴 편지</a></li>
+					</ul>
+				</li>
+				<li class="topMenuli"><a class="topMenulink" href="#" style="cursor:default;">고민해결</a>
+					<ul class="subMenu">
+						<li><a class="subMenulink" href="qna.jsp">Q n A</a></li>
+						<li><a class="subMenulink" href="advice.jsp">상담 하기</a></li>
+						<li><a class="subMenulink" href="mail.jsp">메일 보내기</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="side"> 
+        <div>
+			<ul>
+				<li><a href="login.jsp">Login</a></li>
+				<li><a href="join.jsp">Join</a></li>
+			</ul>
+		</div>
+	</div>
+	</nav>
+
+	<section>
+	<!-- 본문 -->
+
+		<div class="font">
+			<h2>박병호, ML 진출 첫 해 10홈런 달성…한국인 4호<h2>
+			<h5>뉴스 일자  2016.06.06<h5>
+		</div>
+
+		<div class="font_div">
+
+		마침내 넘어갔다. 미네소타 박병호(30)가 기나긴 아홉수를 끊고 마침내 시즌 10호 홈런포를 쏘아 올렸다. 무려 19경기 만에 터진 오아시스다. 
+
+		박병호는 6일(한국시간) 타깃필드에서 열린 탬파베이와의 원정 경기에 4번 타자 1루수로 선발 출전해 1-1로 팽팽하던 3회 두 번째 타석에서 균형을 깨는 좌월 솔로 홈런을 쳤다. 
+
+		볼카운트 1-1에서 상대 왼손 선발 드류 스마일리의 3구째 슬라이더(시속 119㎞)를 잡아당겨 외야 왼쪽 관중석 2층 난간에 맞고 떨어지는 대형 아치를 그렸다. 지난달 14일 클리블랜드전에서 시즌 8호와 9호 홈런을 기록한 뒤 무려 19경기 만에 터진 시즌 10호 홈런이다.
+
+		이로써 박병호는 메이저리그 진출 첫 해부터 두 자릿수 홈런 고지를 밟는 데 성공했다. 이와 함께 최희섭, 추신수, 강정호에 이어 두 자릿수 홈런을 때려낸 역대 네 번째 한국인 메이저리거로 기록됐다. 
+
+		나머지 타석에서는 안타가 나오지 않았다. 1회 1사 1루 첫 타석에서는 스마일리의 직구 3개에 당해 헛스윙 삼진으로 돌아섰다. 홈런 이후 타석에 들어선 4회 2사 후에는 포수 파울플라이로 아웃됐다. 
+
+		네 번째 타석도 아쉬움을 남겼다. 4-4로 맞선 6회 2사 2루서 탬파베이가 3번 타자 조 마우어를 거르고 4번 박병호와의 승부를 택했다. 그러나 박병호는 볼카운트 1-2에서 상대 왼손 투수 에라스모 라미레스의 4구째 직구(시속 153㎞)에 헛스윙 삼진을 당했다. 5-5 동점이던 8회 2사 후 마지막 타석에서는 2루수 플라이에 그쳤다.	
+
+		</div>
+
+		<div class="font_bottom">
+			<h5><a href="#"> - 로또1등3번당첨자,"패턴정해져 있어" </a><h5>
+			<h5><a href="#"> - '태백장사' 김성용, 보은서 생애 첫 ‘꽃가마’ 승선 </a><h5>
+		</div>
+
+		
+	
+
+	<article>
+	<!-- -->
+	</article>
+
+
+	</section>
+
+
+	<footer>
+	<!-- 바닥 -->
+	<div id="footer">
+        <div class="footerMenu">
+            <ul>
+				<li><a href="http://blog.naver.com/mdot2010">석지민</a></li>
+                <li><a href="http://blog.naver.com/hello6209">이우영</a></li>
+                <li><a href="http://blog.daum.net/chutedeau">진연경</a></li>
+            </ul>
+			<img src="./images/logo.png" width="70px" height="70px;" alt="좋은날엔희소식"/>
+		</div>
+		<p class="copyright" style="cursor:text;"> Copyright © 2016 Color of Delight Group</p>
+    </div>
+
+	</footer>
+  
+ </body>
+</html>
